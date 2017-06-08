@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,50 +13,46 @@
 
 <li>Guess what letter I'm thinking of
 
-
-
+<div id="empty-div"></div>
 <div id="Wins-div"></div>
 <div id="Losses-div"></div>
 <div id="Guesses-div"></div>
 <div id="Your-div"></div>
 
+<!-- its good practice to put all of your javascript in a seperate file and 
+  link it at the top. -->
   <script type="text/javascript">
 
-var letters = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
-var item = [""]
-var guess = [""]
+// since these letters are not defined as variables, you will have to use them as strings i.e. ["a", "b", "c", .... ]
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var items = []
 var wins = 0
 var losses = 0
 var guesses = 0
 
+var randomGuess = letters[Math.floor(Math.random()*letters.length)];
 
-items[Math.floor(Math.random()*letters.length)];
-
-onkeydown
+// onkeydown has to be in this syntax, you can look at past exercises or check documentation/google
+// for an example, use your resources!
+document.onkeydown = function (event) {
 // for (var i = 0; i < 20; i++){
-if (confirmGuess) {
-var guess === item 
-
-}
-
-
-
-}
-
- 
-
-if letter ===
-
+// we get the letter pressed from the event
+guess = event.key;
+console.log(guess);
+console.log(randomGuess);
+// I don't see confirmGuess defined anywhere
 var targetDiv = document.getElementById("empty-div");
+if (guess === randomGuess) {
+  targetDiv.innerHTML = "Right!";
+} else {
+  targetDiv.innerHTML = "Wrong!";
+}
+// no need for this many blank lines, it makes the code hard to read
 
 // We then use the JavaScript method ".innerHTML" to change the content to "Hello friends!"
-targetDiv.innerHTML = "Hello friends!";
 
-
-Wins
-Losses
-Guesses Left
-Your Guesses so far
+// if this is supposed to be html, you need to have it outside of the <script> tags
+}
 
 
 
